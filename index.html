@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="birthday_selina.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/9678be3a8f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <title>Happy birthday Selina!</title>
+</head>
+<body>
+    <audio id="myAudio"></audio>
+
+    <!-- Previous one button -->
+    <button id="prev-btn">
+        <i class="fa-solid fa-circle-left"></i>
+    </button>
+
+    <!-- Content -->
+     <div id="content" class="content">
+        <!-- Page 1 -->
+         <div id="p1" class="page">
+            <div class="front">
+                <div id="f1" class="front-content">
+                </div>
+            </div>
+
+            <div class="back">
+                <div id="b1" class="back-content">
+                </div>
+            </div>
+         </div>
+         <!-- Page 2 -->
+         <div id="p2" class="page">
+            <div class="front">
+                <div id="f2" class="front-content">
+                </div>
+            </div>
+
+            <div class="back">
+                <div id="b2" class="back-content">
+                </div>
+            </div>
+         </div>
+     </div>
+
+    <!-- Next one button -->
+    <button id="next-btn" class="confetti-button">
+        <i class="fa-solid fa-circle-right"></i>
+    </button>
+
+    <script>
+        document.getElementsByClassName("confetti-button")[0].addEventListener("click", function handleClick() {
+            confetti({
+                particleCount: 200,
+                spread: 100
+            });
+            let audio = document.getElementById("myAudio");
+            audio.src = "Happy Birthday (Piano Version).mp3";  // Zmieniamy źródło, aby "odświeżyć" element
+            audio.volume = 0.1;
+            setTimeout(() => {
+                audio.pause();
+            }, 15000); 
+            audio.play().catch(error => {
+                console.log("Błąd odtwarzania:", error);
+            });
+
+            this.removeEventListener("click", handleClick);
+        });
+    </script>
+</body>
+</html>

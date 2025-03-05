@@ -1,0 +1,173 @@
+:root{
+    --blue: #4A90E2;
+    --green: #2B7A78;
+    --grey: #E1E5EA;
+    --light-blue: #b7d8e6;
+    --dark-green: #264653;
+    background-image: url(tlo_selina.png);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: rgb(33, 120, 152,0.8);
+    overflow: hidden;
+}
+
+/* content */
+.content{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+.page{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1580px;
+}
+
+.front, .back{
+    background-color: var(--grey);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: 0.5s;
+    box-shadow: #14495c 0px 0px 20px;
+    border-radius: 3%;
+}
+
+
+.front{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 4px solid rgba(20, 76, 97, 0.8);
+}.back{
+    z-index: 0;
+}
+
+#b1, #f2{
+    display:flow-root;
+    padding: 10%;
+    text-align: center;
+}
+
+#b1{
+    text-align: center;
+}
+#f2{
+    align-items: center;
+    justify-content: center;
+    padding-top: 40%;
+}
+
+.front-content, .back-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content{
+    transform: rotateY(180deg);
+}
+
+
+/* Flip effect */
+.flipped .front, .flipped .back{
+    transform: rotateY(-180deg);
+}
+
+/* Buttons apearance */
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover i{
+    color: var(--blue);
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+i{
+    font-size: 58px;
+    color: var(--light-blue);
+}
+
+/* content index */
+#p1{
+    z-index: 2;
+}
+#p2{
+    z-index: 1;
+}
+
+#f1{
+    background-image: url(page1_sln.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -20px;
+    border-radius: 3%;
+}
+#b1{
+    background-image: url(page2_sln.png);
+    border-radius: 3%;
+}
+#f2{
+    background-image: url(page3_sln.png);
+    border-radius: 3%;
+}
+#b2{
+    background-image: url(page4_sln.png);
+    border-radius: 3%;
+}
+/* For phones */
+@media screen and (max-width: 576px) {
+    button{
+        position: absolute;
+        top: 75%;
+    }
+    #next-btn{
+        margin-left: 20%;
+        transform: translate(0px);
+    }
+    #prev-btn{
+        margin-right: 20%;
+        transform: translate(0px);
+    }
+    .content{
+        width: 200px;
+        height: 285px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    #f1, #b1, #f2, #b2 {
+        background-size: cover;
+    }
+}
