@@ -4,7 +4,7 @@
     --grey: #E1E5EA;
     --light-blue: #b7d8e6;
     --dark-green: #264653;
-    background-image: url(tlo_selina.png);
+    background-image: url(background_selina.png);
 }
 
 * {
@@ -134,15 +134,20 @@ i{
     border-radius: 3%;
 }
 #b1{
-    background-image: url(page2_sln.png);
+    background-image: url(page2v2_sln.png);
+    background-size: contain;
     border-radius: 3%;
 }
 #f2{
-    background-image: url(page3_sln.png);
+    background-image: url(page3v2_sln.png);
+    background-size: contain;
     border-radius: 3%;
 }
 #b2{
-    background-image: url(page4_sln.png);
+    background-image: url(sln_page4v2.png);
+    background-size: contain;
+    /* width: 350px;
+    height: 500px; */
     border-radius: 3%;
 }
 /* For phones */
