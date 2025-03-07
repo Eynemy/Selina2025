@@ -219,3 +219,9 @@ i{
     }
     
 }
+
+@media (max-height: 768px) {
+    button{
+        top: 80%;
+    }
+}
