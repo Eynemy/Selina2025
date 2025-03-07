@@ -16,9 +16,15 @@ nextBtn.addEventListener("click", next);
 
 // functions
 function open(){
+    if (window.matchMedia("(max-width: 576px)").matches) {
+        content.style.transform = "translateX(50%)";
+        prevBtn.style.transform = "translateX(-90px)";
+        nextBtn.style.transform = "translateX(90px)";
+    }else{
     content.style.transform = "translateX(50%)";
     prevBtn.style.transform = "translateX(-180px)";
     nextBtn.style.transform = "translateX(180px)";
+    }
 }
 
 function close(isAtBeginning){
