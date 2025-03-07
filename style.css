@@ -26,8 +26,8 @@ body{
 /* content */
 .content{
     position: relative;
-    width: 350px;
-    height: 500px;
+    width: 490px;
+    height: 700px;
     transition: transform 0.5s;
 }
 
@@ -100,7 +100,7 @@ button{
     border: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 10px;
+    margin: 90px;
     transition: transform 0.5s;
 }
 
@@ -114,7 +114,7 @@ button:hover i{
     transition: 0.2s;
 }
 i{
-    font-size: 58px;
+    font-size: 81.2px;
     color: var(--light-blue);
 }
 
@@ -141,6 +141,7 @@ i{
 #f2{
     background-image: url(page3v2_sln.png);
     background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 3%;
 }
 #b2{
@@ -148,8 +149,29 @@ i{
     background-size: contain;
     border-radius: 3%;
 }
-/* For phones */
-@media screen and (max-width: 576px) {
+
+
+@media screen and (max-width: 1200px) {
+    .content{
+        width: 350px;
+        height: 500px;
+    }
+    button{
+        margin: 10px;
+    }
+    i{
+        font-size: 58px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .content{
+        width: 299.25px;
+        height: 427.5px;
+    }
+    #f1, #b1, #f2, #b2 {
+        background-size: cover;
+    }
     button{
         position: absolute;
         top: 75%;
@@ -160,6 +182,22 @@ i{
     }
     #prev-btn{
         margin-right: 20%;
+        transform: translate(0px);
+    }
+}
+
+/* For phones */
+@media screen and (max-width: 576px) {
+    button{
+        position: absolute;
+        top: 70%;
+    }
+    #next-btn{
+        margin-left: 14%;
+        transform: translate(0px);
+    }
+    #prev-btn{
+        margin-right: 14%;
         transform: translate(0px);
     }
     .content{
@@ -173,4 +211,11 @@ i{
     #f1, #b1, #f2, #b2 {
         background-size: cover;
     }
+    i{
+        font-size: 38px;
+    }
+    button{
+        margin: 0px;
+    }
+    
 }
