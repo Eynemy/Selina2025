@@ -217,6 +217,9 @@ i{
     button{
         margin: 0px;
     }
+    button{
+        top: 80%;
+    }
     
 }
 
